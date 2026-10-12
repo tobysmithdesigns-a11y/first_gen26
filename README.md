@@ -31,7 +31,11 @@ Open `dist/standalone.html` directly in a browser. This file embeds all 240 fram
 
 ## Hosted preview
 
-The manual `Publish scroll preview` GitHub Actions workflow builds the site for the `/first_gen26/` project path and deploys to GitHub Pages. It does not publish automatically on push. Publishing requires the project files in the GitHub repository, Pages configured to use GitHub Actions, and running that workflow. A Pages deployment makes the website publicly viewable. The cloud onboarding interface itself does not expose a live website preview or downloadable workspace files.
+The live site is https://tobysmithdesigns-a11y.github.io/first_gen26/.
+
+GitHub Pages currently serves the production files from the `gh-pages` branch, with `/` as the publishing directory. The `main` branch contains the application source. Updating `main` alone does not refresh the live site. Build for the project path with `npm run build -- --base=/first_gen26/`, then publish the generated `dist` contents to `gh-pages`, preserving its existing history.
+
+The manual `Publish scroll preview` workflow provides an alternative deployment through GitHub Actions if Pages settings are switched to that source. A Pages deployment makes the website publicly viewable. The cloud onboarding interface itself does not expose a live website preview or downloadable workspace files.
 
 ## Sequence implementation
 
