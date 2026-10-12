@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f2eb" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta
+      name="description"
+      content="An interactive material study. Scroll to explore a patterned architectural panel, one layer at a time."
+    />
+    <title>Form & Field — A study in layers</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="Form and Field, back to start"
+        ><span class="brand-symbol" aria-hidden="true"
+          ><i></i><i></i><i></i></span
+        >FORM <span class="amp">&</span> FIELD<span class="brand-dot"
+          >®</span
+        ></a
+      >
+      <nav aria-label="Main navigation">
+        <a href="#study" class="nav-active">The study <span>↗</span></a
+        ><button id="about-button" type="button">
+          About the object <span>↗</span>
+        </button>
+      </nav>
+      <span class="header-note">An exploration of what lies beneath.</span>
+    </header>
+
+    <main id="top">
+      <section
+        id="study"
+        class="scroll-sequence"
+        aria-label="Interactive image sequence"
+      >
+        <div class="stage">
+          <div class="study-heading">
+            <span
+              ><span class="small-cross" aria-hidden="true">+</span> MATERIAL
+              EXPLORATIONS</span
+            ><span>VOLUME 01 / 2026</span>
+          </div>
+          <div class="stage-content">
+            <div class="editorial">
+              <div class="eyebrow">ONE OBJECT. MANY PERSPECTIVES.</div>
+              <h1>
+                Designed<br />
+                in <em>layers.</em>
+              </h1>
+              <p class="intro">
+                Look a little closer. A familiar surface<br
+                  class="desktop-break"
+                />
+                becomes an unexpected story of<br class="desktop-break" />
+                pattern, structure, and possibility.
+              </p>
+              <div class="chapter-description">
+                <span class="chapter-number" id="chapter-number">01</span>
+                <div>
+                  <h2 id="chapter-title">The surface</h2>
+                  <p id="chapter-copy">Where pattern meets possibility.</p>
+                </div>
+              </div>
+              <button
+                class="scroll-invitation"
+                id="explore-button"
+                type="button"
+              >
+                <span class="arrow-circle" aria-hidden="true">↓</span
+                ><span
+                  >SCROLL TO DISCOVER<span class="invitation-detail"
+                    >Take it apart, one frame at a time.</span
+                  ></span
+                >
+              </button>
+            </div>
+            <div class="visual-column">
+              <div class="canvas-shell" id="canvas-shell">
+                <div class="viewer-label">
+                  <span class="live-dot"></span> THE LAYER STUDY
+                  <span class="viewer-index">001</span>
+                </div>
+                <canvas
+                  id="sequence-canvas"
+                  role="img"
+                  aria-label="Patterned architectural panel. Scroll or use the frame slider to see it unfold."
+                ></canvas>
+                <div class="viewer-bottom">
+                  <span>FORM, REVEALED.</span
+                  ><span class="viewer-mark" aria-hidden="true">↗</span>
+                </div>
+                <div class="loading" id="loading" role="status">
+                  Preparing the study<span class="loading-dots">…</span>
+                </div>
+                <div class="error-state" id="error-state" hidden>
+                  <p>This frame couldn’t load.</p>
+                  <button type="button" id="retry-button">Try again ↗</button>
+                </div>
+              </div>
+              <div class="scrubber-row">
+                <label for="frame-slider"
+                  >FRAME <span id="frame-current">001</span
+                  ><span class="frame-total"> / 240</span></label
+                ><input
+                  id="frame-slider"
+                  aria-label="Animation frame"
+                  type="range"
+                  min="1"
+                  max="240"
+                  value="1"
+                /><span class="scrubber-end">240</span>
+              </div>
+            </div>
+          </div>
+          <div class="stage-footer">
+            <div class="chapter-nav" aria-label="Sequence chapters">
+              <button
+                type="button"
+                data-progress="0"
+                class="active"
+                aria-current="step"
+              >
+                <span>01</span> The surface</button
+              ><button type="button" data-progress="0.45">
+                <span>02</span> The structure</button
+              ><button type="button" data-progress="0.85">
+                <span>03</span> The layers
+              </button>
+            </div>
+            <span class="footer-note"
+              >A different perspective, with every scroll.<span
+                aria-hidden="true"
+              >
+                ↘</span
+              ></span
+            >
+          </div>
+        </div>
+      </section>
+      <section class="closing" aria-labelledby="closing-title">
+        <span class="eyebrow">THE BEAUTY IS IN THE DETAILS.</span>
+        <h2 id="closing-title">Every layer has a purpose.</h2>
+        <p>A surface is only the beginning. Keep looking.</p>
+        <button id="replay-button" type="button">
+          Explore again <span aria-hidden="true">↺</span>
+        </button>
+        <div class="closing-footer">
+          <span>FORM & FIELD</span><span>A STUDY IN LAYERS — 001</span>
+        </div>
+      </section>
+    </main>
+    <dialog id="about-dialog" aria-labelledby="about-title">
+      <button
+        class="dialog-close"
+        id="close-about"
+        aria-label="Close about"
+        type="button"
+      >
+        ×</button
+      ><span class="eyebrow">MATERIAL EXPLORATION / 001</span>
+      <h2 id="about-title">Beyond the surface.</h2>
+      <p>
+        This study follows a wave-patterned architectural panel as it turns,
+        opens, and reveals the layers beneath its surface.
+      </p>
+      <p>
+        Scroll to move through all 240 original frames. Scroll back to
+        reassemble the object, or use the frame slider and chapter markers to
+        take a closer look.
+      </p>
+      <span class="dialog-note">PATTERN · STRUCTURE · POSSIBILITY</span>
+    </dialog>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
